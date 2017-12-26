@@ -1,11 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      <h1>Send Data</h1>      
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <form (ngSubmit)="addGateways()">
+    <ion-list>    
+      <ion-item>
+        <ion-label floating>Device Name</ion-label>
+        <ion-input type="text" [(ngModel)]="D_name" name="D_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Device Type</ion-label>
+        <ion-input type="text" [(ngModel)]="D_type" name="D_type"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Device uAPI</ion-label>
+        <ion-input type="text" [(ngModel)]="UAPI" name="UAPI"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>End Node1</ion-label>
+        <ion-input type="text" [(ngModel)]="EndNode1" name="EndNode1"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>    
+      <button ion-button color="secondary" type="submit">Add Gateway</button>
+    </div>
+  </form>
 </ion-content>

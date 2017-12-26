@@ -5,13 +5,35 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+  <!--<h1>Welcome to Ionic!</h1>
+  <button ion-button color="omi" (click)="show=!show">Danger</button>
+  <p *ngIf=show>Welcome to Omi's Color ?</p> -->
+  <button (click)="getDataofGateways()">
+    Get Data
+  </button>
+  <ion-card *ngFor="let a of GATEWAYS">
+      
+        <ion-card-header>
+          Details of Devices
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+              <ion-icon name="leaf" item-start></ion-icon>
+              Name: {{a.metadata.d_name}}<br> 
+              DeviceType: {{a.metadata.d_type}}<br>
+              uAPI: {{a.metadata.uAPI}}<br>
+              endNodes: {{a.endNodes}}<br>
+            </ion-item>
+          </ion-list>    
+  </ion-card>
+
+  <!-- <ion-list Details Of Devices>
+    <ion-icon name="leaf" item-start></ion-icon>
+      <button ion-item *ngFor="let a of GATEWAYS" (click)="itemSelected(a)">
+          Name: {{a.metadata.d_name}}<br> 
+          DeviceType: {{a.metadata.d_type}}<br>
+          uAPI: {{a.metadata.uAPI}}<br>
+          endNodes: {{a.endNodes}}<br>
+      </button> 
+    </ion-list> -->
